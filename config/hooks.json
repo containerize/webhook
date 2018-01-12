@@ -1,0 +1,38 @@
+[
+    {
+        "id": "docker-info",
+        "execute-command": "docker",
+        "pass-arguments-to-command": [
+            {
+                "source": "string",
+                "name": "info"
+            }
+        ],
+        "command-working-directory": "/var/webhook",
+        "include-command-output-in-response": true
+    },
+    {
+        "id": "docker-ps",
+        "execute-command": "docker",
+        "pass-arguments-to-command": [
+            {
+                "source": "string",
+                "name": "ps"
+            }
+        ],
+        "command-working-directory": "/var/webhook",
+        "include-command-output-in-response": true
+    },
+    {
+        "id": "docker-version",
+        "execute-command": "docker",
+        "pass-arguments-to-command": [
+            {
+                "source": "string",
+                "name": "version"
+            }
+        ],
+        "command-working-directory": "/var/webhook",
+        "include-command-output-in-response": true
+    }
+]
