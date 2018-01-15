@@ -12,24 +12,72 @@
         "include-command-output-in-response": true
     },
     {
-        "id": "docker-ps",
-        "execute-command": "docker",
-        "pass-arguments-to-command": [
-            {
-                "source": "string",
-                "name": "ps"
-            }
-        ],
-        "command-working-directory": "/var/webhook",
-        "include-command-output-in-response": true
-    },
-    {
         "id": "docker-version",
         "execute-command": "docker",
         "pass-arguments-to-command": [
             {
                 "source": "string",
                 "name": "version"
+            }
+        ],
+        "command-working-directory": "/var/webhook",
+        "include-command-output-in-response": true
+    },
+    {
+        "id": "docker-events",
+        "execute-command": "docker",
+        "pass-arguments-to-command": [
+            {
+                "source": "query",
+                "name": "cmd"
+            },
+            {
+                "source": "query",
+                "name": "until"
+            }
+        ],
+        "command-working-directory": "/var/webhook",
+        "include-command-output-in-response": true
+    },
+    {
+        "id": "docker-ps",
+        "execute-command": "docker",
+        "pass-arguments-to-command": [
+            {
+                "source": "entire-query",
+                "name": ""
+            }
+        ],
+        "command-working-directory": "/var/webhook",
+        "include-command-output-in-response": true
+    },
+    {
+        "id": "docker-logs",
+        "execute-command": "docker",
+        "pass-arguments-to-command": [
+            {
+                "source": "string",
+                "name": "logs"
+            },
+            {
+                "source": "query",
+                "name": "container"
+            }
+        ],
+        "command-working-directory": "/var/webhook",
+        "include-command-output-in-response": true
+    },
+    {
+        "id": "docker-inspect",
+        "execute-command": "docker",
+        "pass-arguments-to-command": [
+            {
+                "source": "string",
+                "name": "inspect"
+            },
+            {
+                "source": "query",
+                "name": "container"
             }
         ],
         "command-working-directory": "/var/webhook",

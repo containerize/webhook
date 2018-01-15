@@ -2,7 +2,7 @@ version: "3"
 
 volumes: 
   hook-data:
-  
+
 services: 
   hook:
     image: containerize/webhook
@@ -10,4 +10,4 @@ services:
       - "9000:9000"
     volumes: 
       - /var/run/docker.sock:/var/run/docker.sock
-      - hook-data:/var/webhook
+      - ./config:/var/webhook
