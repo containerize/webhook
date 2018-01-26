@@ -13,6 +13,8 @@ RUN apk add --update -t build-deps curl go git libc-dev gcc libgcc \
 FROM docker:stable
 ENV WEBHOOK_VERSION 2.6.8
 
+RUN apk add --no-cache git openssh-client curl bash
+
 COPY --from=builder /usr/local/bin/webhook /usr/local/bin/webhook
 COPY config/ /var/webhook/
 EXPOSE      9000
